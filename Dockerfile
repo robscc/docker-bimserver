@@ -16,7 +16,6 @@ RUN apt-get -y update && apt-get -y install \
 	git \
 	ant \
 	wget
-RUN echo "Europe/London" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 ################## BEGIN INSTALLATION ######################
@@ -42,7 +41,7 @@ RUN chmod a+rwx /opt && chmod a+rwx /opt/tomcat/webapps
 
 # Download BIMserver into /webapps for autodeploy
 
-RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/1.4.0-FINAL-2015-11-04/bimserver-1.4.0-FINAL-2015-11-04.war \
+RUN wget https://github.com/opensourceBIM/BIMserver/releases/download/parent-1.5.76/bimserverwar-1.5.76.war \
 	-O /opt/tomcat/webapps/BIMserver.war
 
 # Set environment paths for Tomcat
